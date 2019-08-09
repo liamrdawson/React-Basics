@@ -1,9 +1,26 @@
 const title = React.createElement(
     'h1',
-    {   id: 'main-title', 
-        title: 'This is a Title.'
+    {
+        id: 'main-title', 
+        title: 'This is a title.'
     },
-    'My First React Element!'
+    'Initial React element'
 );
 
-console.log(title);
+const desc = React.createElement(
+    'p',
+    null, 
+    'Check this out'
+);
+
+const header = React.createElement(
+    'heaer',
+    null,
+    title, 
+    desc
+);
+
+ReactDOM.render(
+    header,
+    document.getElementById('root')
+);
