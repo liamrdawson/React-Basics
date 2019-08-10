@@ -1,21 +1,11 @@
 {
-  "name": "add-react",
+  "name": "y",
   "version": "1.0.0",
-  "description": "simple project to add react to a project",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/liamrdawson/React-Basics/tree/master/Add%20React%20ot%20a%20Project"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Liam Dawson",
-  "license": "MIT",
-  "dependencies": {
-    "babel": "^6.23.0"
-  }
+  "author": "",
+  "license": "ISC"
 }
