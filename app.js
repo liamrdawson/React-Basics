@@ -1,38 +1,3 @@
-const players = [
-    {
-        name: "Liam",
-        score: 12,
-        id: 1
-    },
-    {
-        name: "Toby",
-        score: 21,
-        id: 2
-    },
-    {
-        name: "Kelly",
-        score: 15,
-        id: 3
-    },
-    {
-        name: "Owen",
-        score: 17,
-        id: 4
-    },
-    {
-        name: "Lydia",
-        score: 10,
-        id: 5
-    },
-    {
-        name: "Louise",
-        score: 7,
-        id: 6
-    },
-
-];
-
-
 const Header = (props) => {
     return (
         <header>
@@ -78,26 +43,46 @@ class Counter extends React.Component {
 }
 
 
-const App = (props) => {
-    return (
-        <div className="scoreboard">
-            <Header title="Fantasy Football Scoreboard" 
-                    totalPlayers={props.initialPlayers.length} />
+class App extends React.Component {
 
-            {/*Player List*/}
-            {props.initialPlayers.map( player =>
-                <Player 
-                    name={player.name} 
-                    key={player.id}
-                />
-            )}
-            
-        </div>
-    );
+    state = {
+        players: [
+            { name: "Liam",
+                id: 1 },
+            { name: "Toby",     
+                id: 2 },
+            { name: "Kelly",    
+                id: 3 },
+            { name: "Owen",     
+                id: 4 },
+            { name: "Lydia",    
+                id: 5 },
+            { name: "Louise",   
+                id: 6 }
+        ]
+    };
+
+    render(){
+        return (
+            <div className="scoreboard">
+                <Header title="Fantasy Football Scoreboard" 
+                        totalPlayers={this.state.players.length} />
+    
+                {/*Player List*/}
+                {this.state.players.map( player =>
+                    <Player 
+                        name={player.name} 
+                        key={player.id}
+                    />
+                )}
+                
+            </div> //scoreboard
+        );
+    } 
 }
 
 
 ReactDOM.render(
-    <App initialPlayers={players} />,
+    <App />,
     document.getElementById('root')
 );
