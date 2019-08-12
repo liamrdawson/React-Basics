@@ -49,7 +49,7 @@ class App extends Component {
         return (
             <div className="scoreboard">
                 <Header title="Fantasy Football Scoreboard" 
-                        totalPlayers={this.state.players.length} />
+                        players={this.state.players} />
 
                 {/*Player List*/}
                 {this.state.players.map( (player, index) =>
