@@ -66,7 +66,7 @@ class App extends Component {
     render(){
         return (
             <div className="scoreboard">
-                <Header title="Fantasy Football Scoreboard" 
+                <Header title="Scoreboard" 
                         players={this.state.players} />
 
                 {/*Player List*/}
