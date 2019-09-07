@@ -9,8 +9,7 @@ const PlayerList = (pops) => {
         <React.Fragment>
           {players.map( (player, index) =>
             <Player 
-              {...player}
-              key={player.id.toString()} 
+               key={player.id.toString()} 
               index={index}
             />
           )}
