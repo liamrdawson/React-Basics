@@ -4,7 +4,6 @@ import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
 import '../App.css';
 
-
 class App extends Component {
 
     state = {
@@ -63,7 +62,19 @@ class App extends Component {
         });
     }
 
+    getHighScore = () => {
+        const scores = this.state.players.map( p => p.score );
+        const highScore = Math.max(...scores);
+        if (highScore) {
+          return highScore;
+        } 
+        return null;
+      }
+
     render(){
+
+        const highScore = this.getHighScore();
+
         return (
             <div className="scoreboard">
                 <Header title="Scoreboard" 
@@ -79,6 +90,7 @@ class App extends Component {
                         index={index}
                         changeScore={this.handleScoreChange}
                         removePlayer={this.handleRemovePlayer}
+                        isHighScore={highScore === player.score}
                     />
                 )}
                 <AddPlayerForm
